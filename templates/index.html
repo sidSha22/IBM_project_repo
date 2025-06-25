@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legal Sentiment Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>⚖️ Legal Sentiment Analyzer</h1>
+      <form action="/analyze" method="post">
+        <textarea
+          name="legal_text"
+          placeholder="Paste your legal text here..."
+          required
+        >
+{{ input or '' }}</textarea
+        >
+        <button type="submit">Analyze</button>
+      </form>
+      {% if result %}
+      <div class="output">
+        <h2>Result:</h2>
+        <pre>{{ result }}</pre>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
